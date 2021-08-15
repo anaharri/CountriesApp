@@ -1,0 +1,31 @@
+.container {
+  height: 50%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  height: 70%;
+  width: 60%;
+  background-color: #f3f1ed;
+  border: 1px solid #776c62;
+  border-right: none;
+}
+
+.button {
+  height: 70%;
+  width: 20%;
+  background-color: #f3f1ed;
+  border: 1px solid #776c62;
+}
+
+.button:hover {
+  cursor: pointer;
+  /* background-color: transparent;
+  color: white; */
+  background-color: #776c62;
+  color: #f3f1ed;
+  border: 1px solid #f3f1ed;
+}

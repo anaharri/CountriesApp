@@ -1,0 +1,48 @@
+.card {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  margin: 0.5%;
+  padding: 0.5%;
+  background-color: #f3f1ed;
+  border: 1px solid #776c62;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 7px 4px 10px 2px rgb(189, 184, 178);
+}
+
+.imgContainer {
+  width: 30%;
+  height: auto;
+  margin-right: 3%;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.textContainer {
+  text-align: left;
+}
+
+.link {
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+.country {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.continent {
+  font-size: 22px;
+  margin-top: 0;
+  color: #776c62;
+}

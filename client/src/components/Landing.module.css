@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  color: #49413a;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../img/andrew-stutesman-l68Z6eF2peA-unsplash.jpg');
+  background-size: cover;
+}
+
+.textContainer {
+  padding: 5vh;
+  width: 40vw;
+  height: 60vh;
+  background-color: #d1cabfc2;
+  box-shadow: -1px 2px 104px 12px rgba(0, 0, 0, 0.68);
+  -webkit-box-shadow: -1px 2px 104px 12px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: -1px 2px 104px 12px rgba(0, 0, 0, 0.68);
+}
+
+.title {
+  font-size: 2.4em;
+  padding-top: 8%;
+  padding-bottom: 12%;
+  border-bottom: 1px solid #49413a;
+}
+
+.text {
+  font-size: 1.2em;
+}
+
+.btn {
+  width: 50%;
+  padding: 2%;
+  border: 0.5px solid;
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+  font-size: large;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  font-size: large;
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+}
+
+.footer {
+  font-size: smaller;
+  font-weight: bold;
+}

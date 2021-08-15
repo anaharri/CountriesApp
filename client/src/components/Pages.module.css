@@ -1,0 +1,17 @@
+.numBar {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  max-width: 75%;
+  position: relative;
+  background-color: #776c62;
+}
+
+.number {
+  color: white;
+  margin: 0.9em;
+}
+
+.number:hover {
+  cursor: pointer;
+}

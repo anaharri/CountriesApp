@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3f1ed;
+}
+
+.countryContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3f1ed;
+  padding: 5vh 0;
+}
+
+.btnContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  height: 70%;
+  width: 50%;
+  background-color: #f3f1ed;
+  border: 1px solid #776c62;
+  line-height: 2rem;
+  font-size: 1rem;
+}
+
+.btn:first-of-type {
+  border-right: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #776c62;
+  color: #f3f1ed;
+  border: 1px solid #f3f1ed;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #f3f1ed;
+}
