@@ -1,5 +1,7 @@
 .card {
   width: 75%;
+  /* min-width: 75%; */
+  /* max-height: 20vh; */
   display: flex;
   flex-direction: row;
   margin: 0.5%;
@@ -9,13 +11,13 @@
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   box-shadow: 7px 4px 10px 2px rgb(189, 184, 178);
 }
 
 .imgContainer {
   width: 30%;
-  height: auto;
+  /* height: min-content; */
   margin-right: 3%;
 }
 

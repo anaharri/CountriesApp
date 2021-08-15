@@ -1,12 +1,24 @@
+// import React from 'react'
+
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { getAllCountries } from '../actions'
+
 import styles from './Navbar.module.css'
 import Searchbar from './Searchbar'
 
 export default function Navbar({ sort, filter }) {
+  const dispatch = useDispatch()
+
+  function handleClick(e) {
+    e.preventDefault()
+    dispatch(getAllCountries())
+  }
+
   return (
     <div className={styles.navbar}>
       <div className={styles.container}>
-        <h1 className={styles.earth}>
+        <h1 className={styles.earth} onClick={(e) => handleClick(e)}>
           Earth | <span className={styles.byana}>PI</span>
         </h1>
 

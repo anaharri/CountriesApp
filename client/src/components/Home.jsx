@@ -53,7 +53,7 @@ export default function Home() {
     <div className={styles.container}>
       <Navbar sort={handleSort} filter={handleContinentFilter} />
 
-      <h1>Countries</h1>
+      {/* <h1>Countries</h1> */}
 
       <div className={styles.btnContainer}>
         <button className={styles.btn} onClick={(e) => handleClick(e)}>

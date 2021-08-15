@@ -10,18 +10,20 @@ export default function Pages({ amountPerPage, totalAmount, pageNumber }) {
 
   return (
     <nav className={styles.numBar}>
-      {pageNumbers &&
-        pageNumbers.map((num) => {
-          return (
-            <a
-              key={num}
-              className={styles.number}
-              onClick={() => pageNumber(num)}
-            >
-              {num}
-            </a>
-          )
-        })}
+      <div className={styles.numContainer}>
+        {pageNumbers &&
+          pageNumbers.map((num) => {
+            return (
+              <a
+                key={num}
+                className={styles.number}
+                onClick={() => pageNumber(num)}
+              >
+                {num}
+              </a>
+            )
+          })}
+      </div>
     </nav>
   )
 }
