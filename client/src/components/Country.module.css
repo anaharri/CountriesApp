@@ -7,17 +7,15 @@
   margin: 0.5%;
   padding: 0.5%;
   background-color: #f3f1ed;
-  border: 1px solid #776c62;
+  box-shadow: 0px 5px 20px 3px rgb(189, 184, 178);
 }
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 7px 4px 10px 2px rgb(189, 184, 178);
 }
 
 .imgContainer {
   width: 30%;
-  /* height: min-content; */
   margin-right: 3%;
 }
 

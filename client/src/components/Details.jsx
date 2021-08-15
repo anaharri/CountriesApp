@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCountryDetails } from '../actions'
+import { Link } from 'react-router-dom'
+import styles from './Details.module.css'
 
 export default function Details({ country }) {
   const dispatch = useDispatch()
@@ -11,24 +13,41 @@ export default function Details({ country }) {
   })
 
   return (
-    <div>
-      <img alt='flag' src={details.flag} />
-      <h1>
-        {details.name} ({details.id})
-      </h1>
-      <h2>
-        {details.continent}
-        {details.subregion ? ' | ' + details.subregion : null}
-      </h2>
-      <h4>Capital: {details.capital}</h4>
-      <h4>Population: {details.population}</h4>
-      <h4>Area: {details.area} km</h4>
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <div className={styles.imgContainer}>
+          <img alt='flag' src={details.flag} className={styles.img} />
+        </div>
 
-      <h4>Activities:</h4>
-      <ul>
-        {details.activities &&
-          details.activities.map((act) => <li>{act.name}</li>)}
-      </ul>
+        <div className={styles.infoContainer}>
+          <h1 className={styles.title}>
+            {details.name} ({details.id})
+          </h1>
+          <h2 className={styles.subtitle}>
+            {details.continent}
+            {details.subregion ? ' | ' + details.subregion : null}
+          </h2>
+          <h4>Capital: {details.capital}</h4>
+          <h4>Population: {details.population}</h4>
+          <h4>Area: {details.area} km</h4>
+
+          <h4 className={styles.activities}>Activities:</h4>
+          <ul>
+            {details.activities &&
+              details.activities.map((act) => (
+                <li>
+                  <p>
+                    <strong>{act.name}</strong> ({act.season}) | Duration:{' '}
+                    {act.duration} - Difficulty: {act.difficulty}
+                  </p>
+                </li>
+              ))}
+          </ul>
+          <Link to='/countries'>
+            <button className={styles.btn}>Go back</button>
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

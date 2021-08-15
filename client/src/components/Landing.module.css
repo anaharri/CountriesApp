@@ -20,8 +20,8 @@
   height: 60vh;
   background-color: #d1cabfc2;
   box-shadow: -1px 2px 104px 12px rgba(0, 0, 0, 0.68);
-  -webkit-box-shadow: -1px 2px 104px 12px rgba(0, 0, 0, 0.68);
-  -moz-box-shadow: -1px 2px 104px 12px rgba(0, 0, 0, 0.68);
+  /* -webkit-box-shadow: -1px 2px 104px 12px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: -1px 2px 104px 12px rgba(0, 0, 0, 0.68); */
 }
 
 .title {
