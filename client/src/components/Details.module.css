@@ -4,13 +4,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('../img/andrew-stutesman-l68Z6eF2peA-unsplash.jpg');
+  background-size: cover;
+  z-index: -1;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #dad4cc83;
+  z-index: 0;
+  border-bottom: 1px solid #776c62;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   padding: 1.5vh 0.8vw;
-  box-shadow: 0px 0px 20px 3px rgb(189, 184, 178);
+  background-color: #f3f1edb7;
+  box-shadow: -1px 2px 104px 12px rgba(0, 0, 0, 0.68);
+  z-index: 10;
 }
 
 .infoContainer {

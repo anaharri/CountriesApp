@@ -23,7 +23,7 @@ export default function Navbar({ sort, contFilter, actFilter }) {
         <div className={styles.filterContainer}>
           {/* filtro por continente */}
           <select className={styles.filter} onChange={(e) => contFilter(e)}>
-            <option value='All'>All</option>
+            <option value='All'>Filter by region...</option>
             <option value='Africa'>Africa</option>
             <option value='Americas'>Americas</option>
             <option value='Asia'>Asia</option>
