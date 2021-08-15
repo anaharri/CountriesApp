@@ -35,7 +35,7 @@ export default function Details({ country }) {
           <ul>
             {details.activities &&
               details.activities.map((act) => (
-                <li>
+                <li key={act.id}>
                   <p>
                     <strong>{act.name}</strong> ({act.season}) | Duration:{' '}
                     {act.duration} - Difficulty: {act.difficulty}

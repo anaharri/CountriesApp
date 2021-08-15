@@ -1,13 +1,10 @@
-// import React from 'react'
-
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { getAllCountries } from '../actions'
-
 import styles from './Navbar.module.css'
 import Searchbar from './Searchbar'
 
-export default function Navbar({ sort, filter }) {
+export default function Navbar({ sort, contFilter, actFilter }) {
   const dispatch = useDispatch()
 
   function handleClick(e) {
@@ -25,7 +22,7 @@ export default function Navbar({ sort, filter }) {
         <Searchbar />
         <div className={styles.filterContainer}>
           {/* filtro por continente */}
-          <select className={styles.filter} onChange={(e) => filter(e)}>
+          <select className={styles.filter} onChange={(e) => contFilter(e)}>
             <option value='All'>All</option>
             <option value='Africa'>Africa</option>
             <option value='Americas'>Americas</option>
@@ -34,12 +31,22 @@ export default function Navbar({ sort, filter }) {
             <option value='Oceania'>Oceania</option>
           </select>
 
+          {/* filtro por actividad */}
+          <select className={styles.filter} onChange={(e) => actFilter(e)}>
+            <option value='All'>Filter by activity...</option>
+            <option value='Summer'>Summer</option>
+            <option value='Fall'>Fall</option>
+            <option value='Winter'>Winter</option>
+            <option value='Spring'>Spring</option>
+          </select>
+
           {/* orden por nombre o poblacion */}
           <select className={styles.filter} onChange={(e) => sort(e)}>
-            <option value='AZ'>Alphabetic (A-Z)</option>
-            <option value='ZA'>Alphabetic (Z-A)</option>
-            <option value='populationAsc'>By population (asc)</option>
-            <option value='populationDesc'>By population (desc)</option>
+            <option value='AZ'>Sort by...</option>
+            <option value='AZ'>Name (A-Z)</option>
+            <option value='ZA'>Name (Z-A)</option>
+            <option value='populationAsc'>Population (asc)</option>
+            <option value='populationDesc'>Population (desc)</option>
           </select>
         </div>
       </div>

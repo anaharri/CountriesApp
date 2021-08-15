@@ -51,7 +51,7 @@ export default function CreateActivity() {
     <div className={styles.container}>
       <div className={styles.card}>
         <form onSubmit={(e) => handleSubmit(e)}>
-          <h1>Add Touristic Activity</h1>
+          <h1 className={styles.title}>Add Touristic Activity</h1>
           <div className={styles.formSection}>
             <label htmlFor='name'>Name:</label>
             <input
@@ -87,6 +87,7 @@ export default function CreateActivity() {
               className={styles.input}
               onChange={(e) => handleChange(e)}
             >
+              <option value=''>Difficulty...</option>
               <option value='1'>1</option>
               <option value='2'>2</option>
               <option value='3'>3</option>
@@ -105,6 +106,7 @@ export default function CreateActivity() {
               name='season'
               onChange={(e) => handleChange(e)}
             >
+              <option value=''>Season...</option>
               <option value='Summer'>Summer</option>
               <option value='Fall'>Fall</option>
               <option value='Winter'>Winter</option>
@@ -122,6 +124,7 @@ export default function CreateActivity() {
               onChange={(e) => handleSelect(e)}
               required
             >
+              <option value=''>Countries...</option>
               {countries.map((c) => (
                 <option value={c.id}>{c.name}</option>
               ))}

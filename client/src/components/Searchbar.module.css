@@ -10,15 +10,15 @@
   height: 70%;
   width: 60%;
   background-color: #f3f1ed;
-  border: 1px solid #776c62;
-  border-right: none;
+  border: 1px solid #f3f1ed;
 }
 
 .button {
   height: 70%;
   width: 20%;
   background-color: #f3f1ed;
-  border: 1px solid #776c62;
+  border: 1px solid #f3f1ed;
+  border-left: 1px solid #776c62;
 }
 
 .button:hover {

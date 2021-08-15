@@ -5,7 +5,7 @@
   height: 5vh;
   background-image: url('../img/andrew-stutesman-l68Z6eF2peA-unsplash.jpg');
   background-position: bottom;
-  position: relative;
+  position: fixed;
   bottom: 0;
   z-index: 0;
   padding: 0 3vw;

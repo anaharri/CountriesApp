@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllCountries, filterByContinent, sort } from '../actions'
+import {
+  getAllCountries,
+  filterByContinent,
+  filterByActivity,
+  sort,
+} from '../actions'
 import { Link } from 'react-router-dom'
 import { Country } from './Country'
 import Pages from './Pages'
@@ -28,6 +33,11 @@ export default function Home() {
     dispatch(filterByContinent(e.target.value))
   }
 
+  //filtro por actividad
+  function handleActivityFilter(e) {
+    dispatch(filterByActivity(e.target.value))
+  }
+
   //ordenar por nombre o poblacion
   function handleSort(e) {
     e.preventDefault()
@@ -51,9 +61,11 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <Navbar sort={handleSort} filter={handleContinentFilter} />
-
-      {/* <h1>Countries</h1> */}
+      <Navbar
+        sort={handleSort}
+        contFilter={handleContinentFilter}
+        actFilter={handleActivityFilter}
+      />
 
       <div className={styles.btnContainer}>
         <button className={styles.btn} onClick={(e) => handleClick(e)}>

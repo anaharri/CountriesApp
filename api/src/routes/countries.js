@@ -7,7 +7,7 @@ const router = Router()
 // Obtener un listado de los paises.
 
 router.get('/', async (req, res) => {
-  const all = await Country.findAll()
+  const all = await Country.findAll({ include: Activity })
 
   // GET /countries?name="...":
   // Obtener los países que coincidan con el nombre pasado como query parameter (No necesariamente tiene que ser una matcheo exacto)
