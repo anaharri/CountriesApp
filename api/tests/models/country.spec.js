@@ -1,4 +1,4 @@
-const { Country, conn } = require('../../src/db.js');
+const { Activity, Country, conn } = require('../../src/db.js');
 const { expect } = require('chai');
 
 describe('Country model', () => {
@@ -20,3 +20,26 @@ describe('Country model', () => {
     });
   });
 });
+
+describe('Country', () => {
+  it('should throw an error if no name is provided', (done) => {
+    Country.create({
+      flag: 'https://restcountries.eu/data/col.svg',
+      continent: 'Americas',
+    })
+      .then(() => done(new Error('Please provide a valid name')))
+      .catch(() => done())
+  })
+})
+
+// describe('Activity', () => {
+//   it('should throw an error if no name is provided', (done) => {
+//     Activity.create({
+//       season: 'Summer',
+//       difficulty: '3'
+//     })
+//       .then(() => done(new Error('Please provide a valid name')))
+//       .catch(() => done())
+//   })
+// })
+

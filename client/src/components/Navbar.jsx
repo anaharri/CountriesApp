@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { getAllCountries } from '../actions'
 import styles from './Navbar.module.css'
@@ -12,6 +12,10 @@ export default function Navbar({ sort, contFilter, actFilter }) {
     dispatch(getAllCountries())
   }
 
+  useEffect(() => {
+    dispatch(getAllCountries())
+  }, [dispatch])
+
   return (
     <div className={styles.navbar}>
       <div className={styles.container}>
@@ -21,6 +25,7 @@ export default function Navbar({ sort, contFilter, actFilter }) {
 
         <Searchbar />
         <div className={styles.filterContainer}>
+          
           {/* filtro por continente */}
           <select className={styles.filter} onChange={(e) => contFilter(e)}>
             <option value='All'>Filter by region...</option>

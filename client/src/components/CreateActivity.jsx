@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { getAllCountries, createActivity } from '../actions'
 import styles from './CreateActivity.module.css'
 
 export default function CreateActivity() {
   const dispatch = useDispatch()
+  const history = useHistory()
   const countries = useSelector((state) => state.allCountries)
 
   const [details, setDetails] = useState({
@@ -44,6 +45,7 @@ export default function CreateActivity() {
       season: '',
       countries: [],
     })
+    history.push('./countries')
     alert('Activity created!')
   }
 
