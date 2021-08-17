@@ -11,6 +11,7 @@ import { Country } from './Country'
 import Pages from './Pages'
 import styles from './Home.module.css'
 import Navbar from './Navbar'
+import Error from './Error'
 
 export default function Home() {
   const dispatch = useDispatch()
@@ -79,7 +80,7 @@ export default function Home() {
         </button>
       </div>
 
-      <div className={styles.countryContainer}>
+      {/* <div className={styles.countryContainer}>
         {currentCountries &&
           currentCountries.map((c) => (
             <Country
@@ -90,6 +91,22 @@ export default function Home() {
               continent={c.continent}
             />
           ))}
+      </div> */}
+
+      <div className={styles.countryContainer}>
+        {currentCountries.length > 1 ? (
+          currentCountries.map((c) => (
+            <Country
+              name={c.name}
+              flag={c.flag}
+              id={c.id}
+              key={c.id}
+              continent={c.continent}
+            />
+          ))
+        ) : (
+          <Error text={'No countries found. Please try again'} />
+        )}
       </div>
 
       <Pages
