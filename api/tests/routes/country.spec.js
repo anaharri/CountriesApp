@@ -15,11 +15,20 @@ describe('Country routes', () => {
       console.error('Unable to connect to the database:', err)
     })
   )
-  beforeEach(() =>
-    Country.sync({ force: true }).then(() => Country.create(pokemon))
+  beforeEach(
+    () => Country.sync({ force: true })
+    // .then(() => Country.create(pokemon))
   )
   describe('GET /countries', () => {
-    it('should get 200', () => agent.get('/countries').expect(200))
+    it('should return status 200', () => agent.get('/countries').expect(200))
+    it('expects content to be of type JSON', () => {
+      agent.get('/countries').expect('Content-Type', /json/)
+    })
+  })
+  describe('GET /countries/:id', () => {
+    it('should return status 200', () => agent.get('/countries').expect(200))
+    it('expects content to be of type JSON', () => {
+      agent.get('/countries').expect('Content-Type', /json/)
+    })
   })
 })
-
