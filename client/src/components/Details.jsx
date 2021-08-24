@@ -29,7 +29,7 @@ export default function Details({ country }) {
           </h2>
           <h4>Capital: {details.capital}</h4>
           <h4>Population: {details.population}</h4>
-          <h4>Area: {details.area} km</h4>
+          <h4>Area: {details.area} km²</h4>
 
           <h4 className={styles.activities}>Activities:</h4>
           <ul>

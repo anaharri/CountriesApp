@@ -54,6 +54,14 @@ export function filterByActivity(payload) {
   }
 }
 
+
+export function filterByActivityName(payload) {
+  return {
+    type: 'FILTER_BY_ACTIVITY_NAME',
+    payload,
+  }
+}
+
 export function sort(payload) {
   return {
     type: 'SORT',

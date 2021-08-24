@@ -4,7 +4,7 @@ import { getAllCountries } from '../actions'
 import styles from './Navbar.module.css'
 import Searchbar from './Searchbar'
 
-export default function Navbar({ sort, contFilter, actFilter }) {
+export default function Navbar({ sort, contFilter, actFilter, actNameFilter }) {
   const dispatch = useDispatch()
 
   function handleClick(e) {
@@ -25,7 +25,6 @@ export default function Navbar({ sort, contFilter, actFilter }) {
 
         <Searchbar />
         <div className={styles.filterContainer}>
-          
           {/* filtro por continente */}
           <select className={styles.filter} onChange={(e) => contFilter(e)}>
             <option value='All'>Filter by region...</option>
@@ -36,13 +35,20 @@ export default function Navbar({ sort, contFilter, actFilter }) {
             <option value='Oceania'>Oceania</option>
           </select>
 
-          {/* filtro por actividad */}
+          {/* filtro por estacion */}
           <select className={styles.filter} onChange={(e) => actFilter(e)}>
-            <option value='All'>Filter by activity...</option>
+            <option value='All'>Filter activities by season...</option>
             <option value='Summer'>Summer</option>
             <option value='Fall'>Fall</option>
             <option value='Winter'>Winter</option>
             <option value='Spring'>Spring</option>
+          </select>
+
+          {/* filtro por actividad */}
+          <select className={styles.filter} onChange={(e) => actNameFilter(e)}>
+            <option value='All'>Filter by activity...</option>
+            <option value='Skiing'>Skiing</option>
+            <option value='Surfing'>Surfing</option>
           </select>
 
           {/* orden por nombre o poblacion */}

@@ -4,6 +4,7 @@ import {
   getAllCountries,
   filterByContinent,
   filterByActivity,
+  filterByActivityName,
   sort,
 } from '../actions'
 import { Link } from 'react-router-dom'
@@ -39,6 +40,10 @@ export default function Home() {
     dispatch(filterByActivity(e.target.value))
   }
 
+  function handleActivityFilterByName(e) {
+    dispatch(filterByActivityName(e.target.value))
+  }
+
   //ordenar por nombre o poblacion
   function handleSort(e) {
     e.preventDefault()
@@ -66,6 +71,7 @@ export default function Home() {
         sort={handleSort}
         contFilter={handleContinentFilter}
         actFilter={handleActivityFilter}
+        actNameFilter={handleActivityFilterByName}
       />
 
       <div className={styles.btnContainer}>
@@ -94,7 +100,7 @@ export default function Home() {
       </div> */}
 
       <div className={styles.countryContainer}>
-        {currentCountries.length > 1 ? (
+        {currentCountries.length ? (
           currentCountries.map((c) => (
             <Country
               name={c.name}

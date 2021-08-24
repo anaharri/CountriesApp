@@ -4,6 +4,7 @@ const { Op } = require('sequelize')
 const router = Router()
 
 router.get('/', async (req, res) => {
+  //incluyo la información de la tabla Activities para poder filtrar por actividad
   const all = await Country.findAll({ include: Activity })
 
   if (req.query.name) {
@@ -12,10 +13,10 @@ router.get('/', async (req, res) => {
     const found = await Country.findAll({
       where: { name: { [Op.substring]: name } },
     })
-    if (!found.length) {
-      // return res.status(404).send('Error: country not found')
-      return res.send([])
-    }
+    // if (!found.length) {
+    // return res.status(404).send('Error: country not found')
+    //   return res.send([])
+    // }
     return res.json(found)
   }
 
